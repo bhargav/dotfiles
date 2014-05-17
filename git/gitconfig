@@ -1,0 +1,25 @@
+[user]
+	name = Bhargav Mangipudi
+	email = bhargav.1191@gmail.com
+[alias]
+	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
+[credential]
+	helper = osxkeychain
+[core]
+	# Making `git rebase` safer on OSX <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	trustctime = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[merge]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
+[github]
+	user = bhargav
