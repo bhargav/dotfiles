@@ -1,0 +1,7 @@
+# Ignore all of emacs.d, which is mostly compiled/downloaded scripts.
+emacs/emacs.d/*
+*.elc
+# But don't ignore these specific locations.
+!emacs/emacs.d/lisp
+!emacs/emacs.d/snippets
+!emacs/emacs.d/init.el
