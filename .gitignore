@@ -4,4 +4,5 @@ emacs/emacs.d/*
 # But don't ignore these specific locations.
 !emacs/emacs.d/lisp
 !emacs/emacs.d/snippets
+!emacs/emacs.d/themes
 !emacs/emacs.d/init.el

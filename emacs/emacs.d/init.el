@@ -3,6 +3,8 @@
 
 (require 'package)
 
+(add-to-list 'custom-theme-load-path (expand-file-name "themes" user-emacs-directory))
+
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
@@ -38,4 +40,4 @@ Return a list of installed packages or nil for every skipped package."
 (require 'evil)
 (evil-mode t)
 
-(load-theme 'brin t)
+(load-theme 'atom-one-dark t)
