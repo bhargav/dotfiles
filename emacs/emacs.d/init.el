@@ -24,14 +24,20 @@
 (show-paren-mode t)
 (if (fboundp 'scroll-bar-mode)
     (scroll-bar-mode -1))
-(setq visible-bell t)
+
+;; Workaround for El-Capitan
+(setq visible-bell nil)
+(setq ring-bell-function 'ignore)
 
 ;; Bootstrap use-package
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
 
-(require 'use-package)
+(eval-when-compile
+  (require 'use-package))
+(require 'diminish)
+;;(setq use-package-verbose t)
 
 ;; ido-mde
 (require 'ido)
