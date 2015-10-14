@@ -15,12 +15,16 @@
 
 (add-to-list 'custom-theme-load-path (expand-file-name "themes" user-emacs-directory))
 
-;; Some defaults
-(setq inhibit-splash-screen t)
+;; Essential settings
+(setq inhibit-splash-screen t
+      inhibit-startup-message t
+      inhibit-startup-echo-area-message t)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(show-paren-mode t)
 (if (fboundp 'scroll-bar-mode)
     (scroll-bar-mode -1))
+(setq visible-bell t)
 
 ;; Bootstrap use-package
 (unless (package-installed-p 'use-package)
@@ -28,6 +32,10 @@
   (package-install 'use-package))
 
 (require 'use-package)
+
+;; ido-mde
+(require 'ido)
+(ido-mode t)
 
 ;; evil-mode
 (use-package evil
@@ -65,6 +73,17 @@
 
 ;; org-mode
 (use-package org :ensure t :pin org)
+
+;; helm
+(use-package helm
+  :ensure t
+  :diminish helm-mode
+  :init
+  (progn
+    (require 'helm-config)
+    (helm-mode)))
+
+(use-package tex-site :ensure auctex)
 
 (load-theme 'atom-one-dark t)
 (custom-set-variables
