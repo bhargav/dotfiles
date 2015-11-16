@@ -89,7 +89,9 @@
     (require 'helm-config)
     (helm-mode)))
 
-(use-package tex-site :ensure auctex)
+;; python-mode
+(use-package python-mode
+  :ensure t)
 
 (load-theme 'atom-one-dark t)
 (custom-set-variables
