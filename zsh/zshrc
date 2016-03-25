@@ -82,6 +82,7 @@ export ARCHFLAGS="-arch x86_64"
 # Example aliases
 alias zshconfig="emacs ~/.zshrc"
 alias gmff="git merge --ff-only"
+alias gr='[ ! -z $(git rev-parse --show-toplevel) ] && cd $(git rev-parse --show-toplevel || pwd)'
 
 # homebrew
 export PATH="/usr/local/bin:$PATH"
