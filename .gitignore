@@ -1,3 +1,6 @@
+# Ignore vim plugins
+vim/vim/plugged/*
+
 # Ignore all of emacs.d, which is mostly compiled/downloaded scripts.
 emacs/emacs.d/*
 *.elc

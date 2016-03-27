@@ -1,0 +1,14 @@
+" Show line numbers
+set number
+
+" Allow hidden buffers, don't limit to 1 file per window/split
+set hidden
+
+inoremap jk <esc>
+inoremap kj <esc>
+
+call plug#begin()
+Plug 'tpope/vim-sensible'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'tpope/vim-fugitive'
+call plug#end()
