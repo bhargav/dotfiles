@@ -11,4 +11,19 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
+
+" vim-airline config
+:let g:airline_theme='papercolor'
+
+if has('mac') || has ('macunix')
+    let g:airline_powerline_fonts = 1
+    set guifont=Monaco\ for\ Powerline:h24
+endif
+
+let mapleader=','
+
+map <C-n> :NERDTreeToggle<CR>
+
