@@ -13,6 +13,8 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/seoul256.vim'
 call plug#end()
 
 " vim-airline config
@@ -27,3 +29,11 @@ let mapleader=','
 
 map <C-n> :NERDTreeToggle<CR>
 
+colo seoul256
+set background=dark
+
+set tabstop=4
+set softtabstop=4
+set expandtab
+
+set cursorline
