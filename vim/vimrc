@@ -13,6 +13,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/seoul256.vim'
 call plug#end()
@@ -22,7 +23,7 @@ call plug#end()
 
 if has('mac') || has ('macunix')
     let g:airline_powerline_fonts = 1
-    set guifont=Monaco\ for\ Powerline:h24
+    set guifont=Monaco\ for\ Powerline:h12
 endif
 
 let mapleader=','
@@ -36,4 +37,4 @@ set tabstop=4
 set softtabstop=4
 set expandtab
 
-set cursorline
+filetype plugin indent on
