@@ -1,8 +1,15 @@
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
+hs.hotkey.bind({'cmd', 'alt', 'ctrl'}, 'r', function()
     hs.reload()
-    hs.alert.show("Config Reloaded")
+    hs.alert.show('Config Reloaded')
 end)
 
-hs.hotkey.bind({"cmd", "j"}, "s", function()
-    hs.application.launchOrFocus("Spotify.app")
-end
+jumpMode = hs.hotkey.modal.new('cmd', 'j')
+jumpMode:bind({}, 's', function()
+    hs.application.launchOrFocus('Spotify.app')
+    jumpMode:exit()
+end)
+
+jumpMode:bind({}, 't', function()
+    hs.application.launchOrFocus('iTerm.app')
+    jumpMode:exit()
+end)
