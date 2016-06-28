@@ -13,3 +13,13 @@ jumpMode:bind({}, 't', function()
     hs.application.launchOrFocus('iTerm.app')
     jumpMode:exit()
 end)
+
+jumpMode:bind({}, 'h', function()
+    hs.application.launchOrFocus('HipChat.app')
+    jumpMode:exit()
+end)
+
+jumpMode:bind({}, 'm', function()
+    hs.application.launchOrFocus('Airmail 3.app')
+    jumpMode:exit()
+end)
