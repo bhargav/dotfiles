@@ -23,3 +23,8 @@ jumpMode:bind({}, 'm', function()
     hs.application.launchOrFocus('Airmail 3.app')
     jumpMode:exit()
 end)
+
+jumpMode:bind({}, 'o', function()
+    hs.application.launchOrFocus('Microsoft Outlook.app')
+    jumpMode:exit()
+end)
