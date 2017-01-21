@@ -20,7 +20,7 @@
       inhibit-startup-message t
       inhibit-startup-echo-area-message t)
 (menu-bar-mode -1)
-(tool-bar-mode -1)
+;; (tool-bar-mode -1)
 (show-paren-mode t)
 (if (fboundp 'scroll-bar-mode)
     (scroll-bar-mode -1))
@@ -94,18 +94,18 @@
   :ensure t)
 
 (load-theme 'atom-one-dark t)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
+ '(package-selected-packages
    (quote
-    ("9397f3ba34bdae8fec1183fc0b8aaf09599fab40af69ba58e167e3d2242327c0" default)))
- '(org-agenda-files (quote ("~/Dropbox/Org/fall2015.org"))))
+    (python-mode helm which-key magit evil-org evil-leader evil use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#282C34" :foreground "#ABB2BF" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Monaco")))))
+ )
