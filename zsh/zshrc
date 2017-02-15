@@ -49,7 +49,7 @@ ZSH_THEME="gentoo"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras github brew brew-cask extract history pip terminal sbt scala mvn aws)
+plugins=(git git-extras github brew brew-cask extract history pip terminal sbt scala mvn aws screen)
 
 # User configuration
 
@@ -74,6 +74,8 @@ export ARCHFLAGS="-arch x86_64"
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+[ -f ~/.zsh.local ] && source ~/.zsh.local
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -89,7 +91,11 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 # z config
-. `brew --prefix`/etc/profile.d/z.sh
+if [ -f ~/bin/z.sh ]; then
+  . ~/bin/z.sh
+else
+  . `brew --prefix`/etc/profile.d/z.sh
+fi
 
 # virtualenvwrapper configuration
 export WORKON_HOME=$HOME/.virtualenvs
