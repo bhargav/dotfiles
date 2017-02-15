@@ -13,6 +13,7 @@
 ;; Activate installed packages
 (package-initialize)
 
+(add-to-list 'exec-path "/usr/local/bin")
 (add-to-list 'custom-theme-load-path (expand-file-name "themes" user-emacs-directory))
 
 ;; Essential settings
@@ -84,16 +85,50 @@
 (use-package helm
   :ensure t
   :diminish helm-mode
-  :init
-  (progn
-    (require 'helm-config)
-    (helm-mode)))
+  :commands helm-mode
+  :config
+  (helm-mode 1))
+
+;; helm-projectile
+(use-package helm-projectile
+  :commands (helm-projectile helm-projectile-switch-project)
+  :ensure t)
+
+;; projectile
+(use-package projectile
+  :ensure t
+  :defer 1
+  :config
+  (projectile-global-mode)
+  (setq projectile-enable-caching t))
 
 ;; python-mode
 (use-package python-mode
   :ensure t)
 
-(load-theme 'atom-one-dark t)
+;; ENSIME
+(use-package ensime
+  :ensure t
+  :pin melpa-stable)
+
+;; scala-mode
+(use-package scala-mode
+  :interpreter
+  ("scala" . scala-mode)
+  :config
+  (setq scala-indent:use-javadoc-style t))
+
+(use-package sbt-mode
+  :commands sbt-start sbt-command
+  :config
+  ;; WORKAROUND: https://github.com/ensime/emacs-sbt-mode/issues/31
+  ;; allows using SPACE when in the minibuffer
+  (substitute-key-definition
+   'minibuffer-complete-word
+   'self-insert-command
+   minibuffer-local-completion-map))
+
+(load-theme 'misterioso t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
