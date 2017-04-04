@@ -102,7 +102,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
 # LaTex config
-export PATH="$PATH:/Users/bhargav/Library/texlive/2015basic/bin/x86_64-darwin"
+export PATH="$PATH:/usr/local/texlive/2016basic/bin/universal-darwin"
 
 if [ $(uname -s) = "Darwin" ]; then
   alias ls='gls'
@@ -111,3 +111,8 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="/Users/bhargav/.conscript/bin:$PATH"
+
+# Miniconda Binary Path
+if [ -d /Users/bhargav/miniconda3 ]; then
+  export PATH=/Users/bhargav/miniconda3/bin:$PATH
+fi
