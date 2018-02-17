@@ -97,10 +97,6 @@ else
   . `brew --prefix`/etc/profile.d/z.sh
 fi
 
-# virtualenvwrapper configuration
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-
 # LaTex config
 export PATH="$PATH:/usr/local/texlive/2016basic/bin/universal-darwin"
 
