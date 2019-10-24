@@ -1,0 +1,12 @@
+config:
+  backup: true
+  create: true
+  dotpath: .
+dotfiles:
+  d_yay:
+    src: config/yay
+    dst: ~/.config/yay
+profiles:
+  manta:
+    dotfiles:
+    - d_yay
