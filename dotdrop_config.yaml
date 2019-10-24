@@ -6,7 +6,18 @@ dotfiles:
   d_yay:
     src: config/yay
     dst: ~/.config/yay
+    link: link
+  d_i3:
+    src: config/i3
+    dst: ~/.config/i3
+    link: link
+  d_fish:
+    src: config/fish
+    dst: ~/.config/fish
+    link: link_children
 profiles:
   manta:
     dotfiles:
     - d_yay
+    - d_i3
+    - d_fish
