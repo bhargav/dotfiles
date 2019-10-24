@@ -15,9 +15,34 @@ dotfiles:
     src: config/fish
     dst: ~/.config/fish
     link: link_children
+  d_kitty:
+    src: config/kitty
+    dst: ~/.config/kitty
+    link: link
+  f_xresources:
+    src: Xresources
+    dst: ~/.Xresources
+    link: link
+  f_xinitrc:
+    src: xinitrc
+    dst: ~/.xinitrc
+    link: link
+  d_xresources:
+    src: config/Xresources
+    dst: ~/.config/Xresources
+    link: link
+  f_gitconfig:
+    src: gitconfig
+    dst: ~/.gitconfig
+    link: link
 profiles:
   manta:
     dotfiles:
     - d_yay
     - d_i3
     - d_fish
+    - d_kitty
+    - f_xresources
+    - f_xinitrc
+    - d_xresources
+    - f_gitconfig

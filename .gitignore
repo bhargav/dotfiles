@@ -1,5 +1,7 @@
 # Ignore Pipenv lock file
 Pipfile.lock
+# Ignore environment variables file
+.env
 
 # Ignore vim plugins
 vim/vim/plugged/*
