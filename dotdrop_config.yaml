@@ -35,6 +35,10 @@ dotfiles:
     src: gitconfig
     dst: ~/.gitconfig
     link: link
+  d_compton:
+    src: config/compton
+    dst: ~/.config/compton
+    link: link
 profiles:
   manta:
     dotfiles:
@@ -46,3 +50,4 @@ profiles:
     - f_xinitrc
     - d_xresources
     - f_gitconfig
+    - d_compton

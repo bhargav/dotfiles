@@ -2,6 +2,6 @@
 	name = Bhargav Mangipudi
 	email = bhargav.mangipudi@gmail.com
 [push]
-    default = simple
+        default = simple
 [github]
-    user = bhargav
+        user = bhargav
