@@ -13,3 +13,9 @@ set fish_complete_path $fish_complete_path[1] $fisher_path/completions $fish_com
 for file in $fisher_path/conf.d/*.fish
     builtin source $file 2> /dev/null
 end
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /home/bhargav/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+
