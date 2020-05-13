@@ -39,6 +39,14 @@ dotfiles:
     src: config/compton
     dst: ~/.config/compton
     link: link
+  d_doom.d:
+    src: doom.d
+    dst: ~/.doom.d
+    link: link
+  d_alacritty:
+    src: config/alacritty
+    dst: ~/.config/alacritty
+    link: link
 profiles:
   manta:
     dotfiles:
@@ -51,3 +59,5 @@ profiles:
     - d_xresources
     - f_gitconfig
     - d_compton
+    - d_doom.d
+    - d_alacritty

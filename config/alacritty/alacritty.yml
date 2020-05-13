@@ -1,0 +1,11 @@
+window:
+  padding:
+    x: 6
+    y: 6
+
+font:
+  normal:
+    family: DejaVuSansMono
+  size: 10
+
+background_opacity: 0.6

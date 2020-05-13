@@ -30,7 +30,7 @@ font pango:System San Francisco Default 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -164,7 +164,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 for_window [class=".*"] border pixel 0
-gaps inner 9
+gaps inner 5
 
 exec --no-startup-id compton --config $HOME/.config/compton/compton.conf
 
