@@ -14,6 +14,9 @@ for file in $fisher_path/conf.d/*.fish
     builtin source $file 2> /dev/null
 end
 
+# Add rust binaries to path
+set PATH ~/.cargo/bin $PATH
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 eval /home/bhargav/miniconda3/bin/conda "shell.fish" "hook" $argv | source
