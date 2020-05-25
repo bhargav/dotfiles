@@ -2,7 +2,11 @@
 ;; Set up package.el to work with MELPA
 (require 'package)
 (add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives
+             '("org" . "https://orgmode.org/elpa/") t)
 (package-initialize)               ;; Initialize & Install Package
 
 (unless package-archive-contents   ;; Refresh the package descriptions
@@ -20,6 +24,7 @@
 (setq use-package-verbose t)
 (setq use-package-always-ensure t)
 
+(load-theme 'leuven t)
 
 ;; From https://pages.sachachua.com/.emacs.d/Sacha.html
 (defun my/reload-emacs-configuration ()
@@ -32,6 +37,7 @@
 ;; Org mode setup
 (use-package org
   :ensure t
+  :pin org
   :config
   (define-key global-map "\C-ca" 'org-agenda)
   (setq org-log-done t)
@@ -40,15 +46,24 @@
 ;; Evil setup
 (use-package evil
   :ensure t
+  :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
   :config
   (evil-mode 1))
+
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :init
+  (evil-collection-init 'which-key))
 
 ;; Compact mode line
 (use-package smart-mode-line
   :ensure t
   :config
   (setq sml/no-confirm-load-theme t)
-  (setq sml/theme 'respectful)
+  (setq sml/theme 'light)
   (sml/setup))
 
 ;; which-key
@@ -70,14 +85,43 @@
     (setq undo-tree-visualizer-timestamps t)
     (setq undo-tree-visualizer-diff t)))
 
+;; Projectile
+(use-package projectile
+  :ensure t
+  :pin melpa-stable
+  :config
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-mode +1))
+
+(use-package command-log-mode
+  :ensure t)
+
+(use-package ivy
+  :ensure t
+  :diminish (ivy-mode . "")
+  :init
+  (ivy-mode 1)
+  :config
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) "))
+
+(use-package magit
+  :ensure t)
+
+(use-package evil-magit
+  :ensure t
+  :after (evil magit))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   )
- '(package-selected-packages (quote (use-package org evil))))
+ '(custom-safe-themes nil)
+ '(package-selected-packages
+   (quote
+    (ivy command-log-mode evil-collection use-package org evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
