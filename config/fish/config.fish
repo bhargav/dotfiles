@@ -14,6 +14,9 @@ for file in $fisher_path/conf.d/*.fish
     builtin source $file 2> /dev/null
 end
 
+# Dotdrop config
+set -x DOTDROP_CONFIG ~/dotfiles/dotdrop_config.yaml
+
 # Add rust binaries to path
 set PATH ~/.cargo/bin $PATH
 
