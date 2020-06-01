@@ -16,11 +16,7 @@ dotfiles:
     dst: ~/.config/fish
     link: link_children
     upignore:
-    - "*/fish_variables"
-  d_kitty:
-    src: config/kitty
-    dst: ~/.config/kitty
-    link: link
+    - '*/fish_variables'
   f_xresources:
     src: Xresources
     dst: ~/.Xresources
@@ -37,9 +33,9 @@ dotfiles:
     src: gitconfig
     dst: ~/.gitconfig
     link: link
-  d_compton:
-    src: config/compton
-    dst: ~/.config/compton
+  d_picom:
+    src: config/picom
+    dst: ~/.config/picom
     link: link
   d_alacritty:
     src: config/alacritty
@@ -49,17 +45,34 @@ dotfiles:
     src: emacs/emacs.d
     dst: ~/.emacs.d
     link: link
+  f_xbindkeysrc:
+    src: xbindkeysrc
+    dst: ~/.xbindkeysrc
+    link: link
 profiles:
   manta:
     dotfiles:
     - d_yay
     - d_i3
     - d_fish
-    - d_kitty
     - f_xresources
     - f_xinitrc
     - d_xresources
     - f_gitconfig
-    - d_compton
+    - d_picom
     - d_alacritty
     - d_emacs
+    - f_xbindkeysrc
+  chlorophyll:
+    dotfiles:
+    - d_yay
+    - d_i3
+    - d_fish
+    - f_xresources
+    - f_xinitrc
+    - d_xresources
+    - f_gitconfig
+    - d_picom
+    - d_alacritty
+    - d_emacs
+    - f_xbindkeysrc

@@ -1,4 +1,8 @@
+{%@@ if profile == "manta" @@%}
 Xft.dpi: 184
+{%@@ elif profile == "chlorophyll" @@%}
+Xft.dpi: 96
+{%@@ endif @@%}
 
 !! URxvt Apperarance
 URxvt.font: xft:DejaVuSansMono:style=Regular:size=8
