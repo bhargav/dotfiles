@@ -118,7 +118,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes nil)
+ '(custom-safe-themes
+   (quote
+    ("ab0e54d683d251ceee2b7c9de7cb486a960a29fb84b56acbff86a355c7d96ed8")))
  '(package-selected-packages
    (quote
     (ivy command-log-mode evil-collection use-package org evil))))

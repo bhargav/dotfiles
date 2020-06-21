@@ -166,7 +166,7 @@ bindsym $mod+r mode "resize"
 for_window [class=".*"] border pixel 0
 gaps inner 5
 
-exec --no-startup-id compton --config $HOME/.config/compton/compton.conf
+exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
 
 ## Start applications
 exec --no-startup-id feh --bg-fill $HOME/Downloads/numix.png
