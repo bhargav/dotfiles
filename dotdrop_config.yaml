@@ -16,7 +16,7 @@ dotfiles:
     dst: ~/.config/fish
     link: link_children
     upignore:
-    - "*/fish_variables"
+    - '*/fish_variables'
   d_kitty:
     src: config/kitty
     dst: ~/.config/kitty
@@ -49,6 +49,10 @@ dotfiles:
     src: emacs/emacs.d
     dst: ~/.emacs.d
     link: link
+  d_polybar:
+    src: config/polybar
+    dst: ~/.config/polybar
+    link: link
 profiles:
   manta:
     dotfiles:
@@ -63,3 +67,4 @@ profiles:
     - d_compton
     - d_alacritty
     - d_emacs
+    - d_polybar
